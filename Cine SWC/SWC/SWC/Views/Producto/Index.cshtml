@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SWC.Models.tb_producto>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado de Productos</h2>
+
+<p>
+    @Html.ActionLink("Registrar nuevo producto", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Precio")
+        </th>
+        <th>
+            @Html.DisplayName("Tipo de producto")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.precio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tipoProducto.desTipopro)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idProducto }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.idProducto }) |
+        </td>
+    </tr>
+}
+
+</table>

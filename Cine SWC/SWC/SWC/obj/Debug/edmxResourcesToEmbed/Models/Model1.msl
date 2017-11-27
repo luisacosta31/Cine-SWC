@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="bd_cine_swcModelStoreContainer" CdmEntityContainer="bd_cine_swcEntities">
+    <EntitySetMapping Name="tb_censura">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_censura">
+        <MappingFragment StoreEntitySet="tb_censura">
+          <ScalarProperty Name="idCensura" ColumnName="idCensura" />
+          <ScalarProperty Name="desCensura" ColumnName="desCensura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cliente">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_cliente">
+        <MappingFragment StoreEntitySet="tb_cliente">
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="fecNac" ColumnName="fecNac" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+          <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+          <ScalarProperty Name="idSexo" ColumnName="idSexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_DetalleVentaProducto">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_DetalleVentaProducto">
+        <MappingFragment StoreEntitySet="tb_DetalleVentaProducto">
+          <ScalarProperty Name="idDetalleVP" ColumnName="idDetalleVP" />
+          <ScalarProperty Name="idTipopro" ColumnName="idTipopro" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="idTamaño" ColumnName="idTamaño" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_empleado">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_empleado">
+        <MappingFragment StoreEntitySet="tb_empleado">
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidos" ColumnName="apellidos" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="sueldo" ColumnName="sueldo" />
+          <ScalarProperty Name="fecNac" ColumnName="fecNac" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contra" ColumnName="contra" />
+          <ScalarProperty Name="idTipotrab" ColumnName="idTipotrab" />
+          <ScalarProperty Name="idSexo" ColumnName="idSexo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_funcion">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_funcion">
+        <MappingFragment StoreEntitySet="tb_funcion">
+          <ScalarProperty Name="idFuncion" ColumnName="idFuncion" />
+          <ScalarProperty Name="nombre_funcion" ColumnName="nombre_funcion" />
+          <ScalarProperty Name="fecha_inicio" ColumnName="fecha_inicio" />
+          <ScalarProperty Name="fecha_fin" ColumnName="fecha_fin" />
+          <ScalarProperty Name="nroSala" ColumnName="nroSala" />
+          <ScalarProperty Name="hora_funcion" ColumnName="hora_funcion" />
+          <ScalarProperty Name="idPelicula" ColumnName="idPelicula" />
+          <ScalarProperty Name="idSala" ColumnName="idSala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_genero">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_genero">
+        <MappingFragment StoreEntitySet="tb_genero">
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="desGenero" ColumnName="desGenero" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pelicula">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_pelicula">
+        <MappingFragment StoreEntitySet="tb_pelicula">
+          <ScalarProperty Name="idPelicula" ColumnName="idPelicula" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="sinopsis" ColumnName="sinopsis" />
+          <ScalarProperty Name="duracion" ColumnName="duracion" />
+          <ScalarProperty Name="trailer" ColumnName="trailer" />
+          <ScalarProperty Name="pais" ColumnName="pais" />
+          <ScalarProperty Name="idGenero" ColumnName="idGenero" />
+          <ScalarProperty Name="idCensura" ColumnName="idCensura" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_producto">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_producto">
+        <MappingFragment StoreEntitySet="tb_producto">
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="idTipopro" ColumnName="idTipopro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_sala">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_sala">
+        <MappingFragment StoreEntitySet="tb_sala">
+          <ScalarProperty Name="idSala" ColumnName="idSala" />
+          <ScalarProperty Name="desSala" ColumnName="desSala" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_Sexo">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_Sexo">
+        <MappingFragment StoreEntitySet="tb_Sexo">
+          <ScalarProperty Name="idSexo" ColumnName="idSexo" />
+          <ScalarProperty Name="desSexo" ColumnName="desSexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tamaño">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_tamaño">
+        <MappingFragment StoreEntitySet="tb_tamaño">
+          <ScalarProperty Name="idTamaño" ColumnName="idTamaño" />
+          <ScalarProperty Name="desTamaño" ColumnName="desTamaño" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipoProducto">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_tipoProducto">
+        <MappingFragment StoreEntitySet="tb_tipoProducto">
+          <ScalarProperty Name="idTipopro" ColumnName="idTipopro" />
+          <ScalarProperty Name="desTipopro" ColumnName="desTipopro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipotrabajador">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_tipotrabajador">
+        <MappingFragment StoreEntitySet="tb_tipotrabajador">
+          <ScalarProperty Name="idTipotrab" ColumnName="idTipotrab" />
+          <ScalarProperty Name="desTipotrab" ColumnName="desTipotrab" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_VentaBoleto">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_VentaBoleto">
+        <MappingFragment StoreEntitySet="tb_VentaBoleto">
+          <ScalarProperty Name="idVentaB" ColumnName="idVentaB" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idFuncion" ColumnName="idFuncion" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_VentaProducto">
+      <EntityTypeMapping TypeName="bd_cine_swcModel.tb_VentaProducto">
+        <MappingFragment StoreEntitySet="tb_VentaProducto">
+          <ScalarProperty Name="idVentaP" ColumnName="idVentaP" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="idEmpleado" ColumnName="idEmpleado" />
+          <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+          <ScalarProperty Name="total" ColumnName="total" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

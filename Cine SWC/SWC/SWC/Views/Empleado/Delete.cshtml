@@ -1,0 +1,97 @@
+﻿@model SWC.Models.tb_empleado
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Apellidos: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("DNI: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sueldo: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sueldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de nacimiento:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecNac)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Usuario: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Contraseña: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contra)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sexo")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_Sexo.desSexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tipo de trabajador")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tipotrabajador.desTipotrab)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Listado de empleados", "Index")
+        </div>
+    }
+</div>

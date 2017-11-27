@@ -1,0 +1,91 @@
+﻿@model SWC.Models.tb_empleado
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Apellidos: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("DNI: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sueldo: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sueldo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de nacimiento:")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecNac)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Usuario: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.usuario)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Contraseña: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contra)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sexo: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_Sexo.desSexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tipo de trabajador: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tipotrabajador.desTipotrab)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idEmpleado }) |
+    @Html.ActionLink("Regresar al listado", "Index")
+</p>

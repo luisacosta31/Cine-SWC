@@ -1,0 +1,83 @@
+﻿@model SWC.Models.tb_cliente
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detalle</h2>
+
+<div>
+    <h4>Cliente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Apellidos: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellidos)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("DNI: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dni)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de Nacimiento: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecNac)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Correo: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.correo)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Contraseña: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contra)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Tarjeta: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tarjeta)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Genero: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_Sexo.desSexo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idCliente }) |
+    @Html.ActionLink("Listado", "Index")
+</p>

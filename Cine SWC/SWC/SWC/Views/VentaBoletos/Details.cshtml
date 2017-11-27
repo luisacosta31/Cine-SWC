@@ -1,0 +1,67 @@
+﻿@model SWC.Models.tb_VentaBoleto
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_VentaBoleto</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cantidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_cliente.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_cliente.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_empleado.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_empleado.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_funcion.nombre_funcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_funcion.nombre_funcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idVentaB }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

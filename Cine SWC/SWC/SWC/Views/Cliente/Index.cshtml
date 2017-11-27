@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SWC.Models.tb_cliente>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado de clientes</h2>
+
+<p>
+    @Html.ActionLink("Registrar nuevo cliente", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Apellidos ")
+        </th>
+        <th>
+            @Html.DisplayName("DNI")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha de nacimiento")
+        </th>
+        <th>
+            @Html.DisplayName("Correo")
+        </th>
+        <th>
+            @Html.DisplayName("Contraseña")
+        </th>
+        <th>
+            @Html.DisplayName("Tarjeta")
+        </th>
+        <th>
+            @Html.DisplayName("Género")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidos)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecNac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contra)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tarjeta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_Sexo.desSexo)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idCliente }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idCliente }) |
+        </td>
+    </tr>
+}
+
+</table>

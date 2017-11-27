@@ -1,0 +1,75 @@
+﻿@model SWC.Models.tb_funcion
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_funcion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre de la función: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre_funcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de inicio: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_inicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de fin: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_fin)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Número de la sala: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nroSala)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Hora de la función: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hora_funcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Nombre de la película: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_pelicula.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Número de la sala: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_sala.desSala)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idFuncion }) |
+    @Html.ActionLink("Listado", "Index")
+</p>

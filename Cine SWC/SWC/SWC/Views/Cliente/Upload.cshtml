@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Upload</h2>
+
+@using (Html.BeginForm("Upload", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Raw(ViewBag.error)
+    <br />
+
+    <span>Excel File</span><input type="file" name="excelfile" />
+    <br />
+        <button class="btn btn-primary" type="submit">
+            Import
+        </button>
+
+        @Html.ActionLink("Ver lista de Clientes", "Index")
+}

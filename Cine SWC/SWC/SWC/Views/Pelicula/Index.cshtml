@@ -1,0 +1,75 @@
+﻿@model IEnumerable<SWC.Models.tb_pelicula>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Registrar nueva película", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre")
+        </th>
+        <th>
+            @Html.DisplayName("Foto")
+        </th>
+        <th>
+            @Html.DisplayName("Sinopsis")
+        </th>
+        <th>
+            @Html.DisplayName("Duración")
+        </th>
+        <th>
+            @Html.DisplayName("Trailer")
+        </th>
+        <th>
+            @Html.DisplayName("País")
+        </th>
+        <th>
+            @Html.DisplayName("Censura")
+        </th>
+        <th>
+            @Html.DisplayName("Género")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            <img src="@Html.DisplayFor(modelItem => item.foto)" style="width:50px; height:100px" />            
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sinopsis)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.duracion)
+        </td>
+        <td>
+            <iframe width="200" height="100" src="@Html.DisplayFor(modelItem => item.trailer)" frameborder="0" allowfullscreen></iframe>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.pais)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_censura.desCensura)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_genero.desGenero)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idPelicula }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.idPelicula }) |
+        </td>
+    </tr>
+}
+
+</table>

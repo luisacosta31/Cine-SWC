@@ -1,0 +1,87 @@
+﻿@model SWC.Models.tb_pelicula
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+<div>
+    <h4>Película</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Nombre: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Foto: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.foto)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Sinopsis : ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sinopsis)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Duración: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.duracion)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Trailer: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.trailer)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Pais: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pais)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Censura: ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_censura.desCensura)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Geénero: "))
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_genero.desGenero)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Listado", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,69 @@
+﻿@model IEnumerable<SWC.Models.tb_funcion>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Listado</h2>
+
+<p>
+    @Html.ActionLink("Registrar nueva función", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Nombre función")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha de inicio")
+        </th>
+        <th>
+            @Html.DisplayName("Fecha de fin")
+        </th>
+        <th>
+            @Html.DisplayName("Número de Sala")
+        </th>
+        <th>
+            @Html.DisplayName("Hora de la función")
+        </th>
+        <th>
+            @Html.DisplayName("Nombre de la película")
+        </th>
+        <th>
+            @Html.DisplayName("Descripción de la sala")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_funcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_inicio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha_fin)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nroSala)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.hora_funcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_pelicula.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_sala.desSala)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idFuncion }) |
+            @Html.ActionLink("Detalle", "Details", new { id=item.idFuncion }) |
+        </td>
+    </tr>
+}
+
+</table>
