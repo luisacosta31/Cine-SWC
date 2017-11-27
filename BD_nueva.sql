@@ -7,6 +7,7 @@ go
 
 create database bd_cine_swc
 go
+
 use bd_cine_swc
 go
 
@@ -64,13 +65,13 @@ desTipopro varchar(200) null
 go
 
 /*Combos Venta Producto*/
-if object_id('tb_tamaï¿½o') is not null
-	drop table tb_tamaï¿½o
+if object_id('tb_tamaño') is not null
+	drop table tb_tamaño
 go
 
-create table tb_tamaï¿½o(
-idTamaï¿½o int primary key identity(1,1),
-desTamaï¿½o varchar(200) null
+create table tb_tamaño(
+idTamaño int primary key identity(1,1),
+desTamaño varchar(200) null
 )
 go
 
@@ -202,7 +203,7 @@ create table tb_DetalleVentaProducto(
 idDetalleVP int primary key identity(1,1),
 idTipopro int references tb_tipoProducto,
 idProducto int references tb_Producto,
-idTamaï¿½o int references tb_Tamaï¿½o,
+idTamaño int references tb_Tamaño,
 total decimal(10,2) null
 )
 go
