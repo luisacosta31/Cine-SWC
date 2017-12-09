@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SWC.Models.tb_VentaProducto>
+
+@{
+    ViewBag.Title = "VentaProductosxMes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Venta de Productos por Meses</h2>
+@if (@ViewBag.Message != null)
+{
+    <div style="color:red;text-align:center"><strong>@ViewBag.Message</strong></div>
+}
+<p>
+    @using (Html.BeginForm())
+    {
+        <strong>Ingrese el mes inicial</strong>
+        <input name="mes" value="@ViewBag.mes" type="number" min="1" max="12" />
+        <strong>Ingrese el mes final</strong>
+        <input name="mesFinal" value="@ViewBag.mesFinal" type="number" min="1" max="12" />
+        <input type="submit" value="consulta" />
+    }
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Fecha: ")
+        </th>
+        <th>
+            @Html.DisplayName("Total: ")
+        </th>
+        <th>
+            @Html.DisplayName("Nombre: ")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_empleado.nombre)
+        </td>
+    </tr>
+}
+
+</table>

@@ -31,8 +31,9 @@ namespace SWC.Models
         public string contra { get; set; }
         public Nullable<int> idTipotrab { get; set; }
         public Nullable<int> idSexo { get; set; }
-        public Nullable<int> estado { get; set; }
+        public Nullable<int> idEstadoEmpleado { get; set; }
     
+        public virtual tb_estadoempleado tb_estadoempleado { get; set; }
         public virtual tb_Sexo tb_Sexo { get; set; }
         public virtual tb_tipotrabajador tb_tipotrabajador { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

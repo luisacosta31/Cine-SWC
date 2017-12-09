@@ -4,33 +4,31 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9bd0dcf0368949a293656ce81b27d9df" Name="Diagram1">
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_censura" Width="1.5" PointX="1.5" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_cliente" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_DetalleVentaProducto" Width="1.5" PointX="12.25" PointY="13.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_empleado" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_funcion" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_genero" Width="1.5" PointX="1.5" PointY="18.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_pelicula" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_producto" Width="1.5" PointX="10" PointY="15" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_sala" Width="1.5" PointX="0.75" PointY="21.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_Sexo" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_tamaño" Width="1.5" PointX="10" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_tipoProducto" Width="1.5" PointX="7.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_tipotrabajador" Width="1.5" PointX="0.75" PointY="1.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_VentaBoleto" Width="1.5" PointX="5.25" PointY="6.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="bd_cine_swcModel.tb_VentaProducto" Width="1.5" PointX="8.25" PointY="6.5" IsExpanded="true" />
+      <Diagram DiagramId="5ada90ec900449fa94b48943ec4f2945" Name="Diagram1">
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_censura" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_DetalleVentaProducto" Width="1.5" PointX="12.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_empleado" Width="1.5" PointX="3" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_estadoempleado" Width="1.5" PointX="0.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_funcion" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_genero" Width="1.5" PointX="1.5" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_pelicula" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_producto" Width="1.5" PointX="10" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_sala" Width="1.5" PointX="0.75" PointY="20.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_Sexo" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_tamaño" Width="1.5" PointX="10" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_tipoProducto" Width="1.5" PointX="7.75" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_tipotrabajador" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_VentaBoleto" Width="1.5" PointX="5.25" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="bd_cine_swcModel.tb_VentaProducto" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
         <AssociationConnector Association="bd_cine_swcModel.FK__tb_pelicu__idCen__1ED998B2" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_client__idSex__25869641" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_VentaB__idCli__30F848ED" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_VentaP__idCli__34C8D9D1" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_Detall__idPro__38996AB5" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_Detall__idTam__398D8EEE" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_Detall__idTip__37A5467C" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_emplea__idSex__22AA2996" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_emplea__idTip__21B6055D" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_Detall__idPro__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_Detall__idTam__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_Detall__idTip__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_emplea__idEst__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_emplea__idSex__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_emplea__idTip__239E4DCF" ManuallyRouted="false" />
         <AssociationConnector Association="bd_cine_swcModel.FK__tb_VentaB__idEmp__300424B4" ManuallyRouted="false" />
-        <AssociationConnector Association="bd_cine_swcModel.FK__tb_VentaP__idEmp__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="bd_cine_swcModel.FK__tb_VentaP__idEmp__32E0915F" ManuallyRouted="false" />
         <AssociationConnector Association="bd_cine_swcModel.FK__tb_funcio__idPel__2B3F6F97" ManuallyRouted="false" />
         <AssociationConnector Association="bd_cine_swcModel.FK__tb_funcio__idSal__2C3393D0" ManuallyRouted="false" />
         <AssociationConnector Association="bd_cine_swcModel.FK__tb_VentaB__idFun__2F10007B" ManuallyRouted="false" />

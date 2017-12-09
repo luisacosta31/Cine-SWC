@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Listado</h2>
+<h2>Listado de Películas</h2>
 
 <p>
     @Html.ActionLink("Registrar nueva película", "Create")
@@ -13,28 +13,28 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Nombre")
+            @Html.DisplayName("Nombre: ")
         </th>
         <th>
-            @Html.DisplayName("Foto")
+            @Html.DisplayName("Afiche: ")
         </th>
         <th>
-            @Html.DisplayName("Sinopsis")
+            @Html.DisplayName("Sinopsis: ")
         </th>
         <th>
-            @Html.DisplayName("Duración")
+            @Html.DisplayName("Duración: ")
         </th>
         <th>
-            @Html.DisplayName("Trailer")
+            @Html.DisplayName("Trailer: ")
         </th>
         <th>
-            @Html.DisplayName("País")
+            @Html.DisplayName("País: ")
         </th>
         <th>
-            @Html.DisplayName("Censura")
+            @Html.DisplayName("Censura: ")
         </th>
         <th>
-            @Html.DisplayName("Género")
+            @Html.DisplayName("Género: ")
         </th>
         <th></th>
     </tr>
@@ -67,7 +67,8 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idPelicula }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.idPelicula }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idPelicula }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idPelicula })
         </td>
     </tr>
 }

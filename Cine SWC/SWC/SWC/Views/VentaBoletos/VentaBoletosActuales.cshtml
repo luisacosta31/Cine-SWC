@@ -1,0 +1,50 @@
+﻿@model IEnumerable<SWC.Models.tb_VentaBoleto>
+
+@{
+    ViewBag.Title = "VentaBoletosActuales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>VentaBoletosActuales</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayName("Fecha: ")
+        </th>
+        <th>
+            @Html.DisplayName("Cantidad: ")
+        </th>
+        <th>
+            @Html.DisplayName("Total: ")
+        </th>
+        <th>
+            @Html.DisplayName("Empleado: ")
+        </th>
+        <th>
+            @Html.DisplayName("Función: ")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_empleado.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_funcion.nombre_funcion)
+        </td>
+    </tr>
+}
+
+</table>

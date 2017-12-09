@@ -52,6 +52,10 @@ namespace SWC.Controllers
         {
             if (ModelState.IsValid)
             {
+                if(tb_producto.precio <= 0)
+                {
+                    ViewBag.Message = "El precio debe ser mayor a 0";
+                }
                 db.tb_producto.Add(tb_producto);
                 db.SaveChanges();
                 return RedirectToAction("Index");

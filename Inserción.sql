@@ -6,7 +6,8 @@ insert into tb_Sexo values('Femenino')
 go
 -- Inserción a tabla tipo de trabajador:
 insert into tb_tipotrabajador values('Administrador')
-insert into tb_tipotrabajador values('Cajero')
+insert into tb_tipotrabajador values('Cajero - Boletos')
+insert into tb_tipotrabajador values('Cajero - Confiteria')
 go
 --Inserción a la tabla censura
 insert into tb_censura values('Apta para todos')
@@ -47,6 +48,10 @@ insert into tb_tipoProducto values('Confiteria')
 insert into tb_tipoProducto values('Salados')
 insert into tb_tipoProducto values('Sandwiches')
 go
+--Inserción en la tabla estado empleados 
+insert into tb_estadoempleado values('Habilitado')
+insert into tb_estadoempleado values('Inhabilitado')
+go
 --Inserción de un administrador por defecto en la tabla de empleados
-insert into tb_empleado values('Administrador', 'Administrar', '12345678', 0000.00, '01/01/2017','admin', 'admin', 1, 1, 0)
+insert into tb_empleado values('Administrador', 'Administrar', '12345678', 0000.00, '01/01/2017','admin', 'admin', 1, 1, 1)
 go

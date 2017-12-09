@@ -17,15 +17,12 @@ namespace SWC.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_Sexo()
         {
-            this.tb_cliente = new HashSet<tb_cliente>();
             this.tb_empleado = new HashSet<tb_empleado>();
         }
     
         public int idSexo { get; set; }
         public string desSexo { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_cliente> tb_cliente { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_empleado> tb_empleado { get; set; }
     }

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Listado de Ventas</h2>
+<h2>Listado de ventas de boletos</h2>
 
 <p>
     @Html.ActionLink("Registrar nueva venta", "Create")
@@ -13,22 +13,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Fecha")
+            @Html.DisplayName("Fecha de la venta: ")
         </th>
         <th>
-            @Html.DisplayName("Cantidad")
+            @Html.DisplayName("Cantidad: ")
         </th>
         <th>
-            @Html.DisplayName("Total")
+            @Html.DisplayName("Total: ")
         </th>
         <th>
-            @Html.DisplayName("Nombre de cliente")
+            @Html.DisplayName("Nombre del empleado: ")
         </th>
         <th>
-            @Html.DisplayName("Nombre de empleado")
-        </th>
-        <th>
-            @Html.DisplayName("Nombre de la función")
+            @Html.DisplayName("Nombre de la función: ")
         </th>
         <th></th>
     </tr>
@@ -45,16 +42,15 @@
             @Html.DisplayFor(modelItem => item.total)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.tb_cliente.nombre)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.tb_empleado.nombre)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.tb_funcion.nombre_funcion)
         </td>
         <td>
-            @Html.ActionLink("Detalle", "Details", new { id=item.idVentaB }) |
+            @Html.ActionLink("Editar", "Edit", new { id=item.idVentaB }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idVentaB }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idVentaB })
         </td>
     </tr>
 }

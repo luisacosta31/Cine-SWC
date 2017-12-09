@@ -26,9 +26,9 @@ namespace SWC.Models
         }
     
         public virtual DbSet<tb_censura> tb_censura { get; set; }
-        public virtual DbSet<tb_cliente> tb_cliente { get; set; }
         public virtual DbSet<tb_DetalleVentaProducto> tb_DetalleVentaProducto { get; set; }
         public virtual DbSet<tb_empleado> tb_empleado { get; set; }
+        public virtual DbSet<tb_estadoempleado> tb_estadoempleado { get; set; }
         public virtual DbSet<tb_funcion> tb_funcion { get; set; }
         public virtual DbSet<tb_genero> tb_genero { get; set; }
         public virtual DbSet<tb_pelicula> tb_pelicula { get; set; }

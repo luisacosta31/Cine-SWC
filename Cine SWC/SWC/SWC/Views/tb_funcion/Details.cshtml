@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalle</h2>
 
 <div>
-    <h4>tb_funcion</h4>
+    <h4>Función</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Fecha de inicio: ")
+            @Html.DisplayName("Fecha de inicio de la función: ")
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Fecha de fin: ")
+            @Html.DisplayName("Fecha de fin de la función: ")
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Nombre de la película: ")
+            @Html.DisplayName("Película: ")
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Número de la sala: ")
+            @Html.DisplayName("Sala: ")
         </dt>
 
         <dd>
@@ -71,5 +71,5 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.idFuncion }) |
-    @Html.ActionLink("Listado", "Index")
+    @Html.ActionLink("Regresar al listado", "Index")
 </p>

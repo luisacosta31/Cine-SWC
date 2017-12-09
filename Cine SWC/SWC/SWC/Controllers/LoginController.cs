@@ -38,17 +38,29 @@ namespace SWC.Controllers
                 {
                     if (v.usuario.ToLower().Equals(usuario.ToLower()) && v.contra.Equals(contraseña))
                     {
-                        Session["idUsuario"] = v.idEmpleado;
-                        Session["tipousuario"] = v.idTipotrab;
-                        Session["nombre"] = v.nombre + " " + v.apellidos;
-                        Session["destipousuario"] = v.tb_tipotrabajador.desTipotrab;
-                        if (Session["tipousuario"].Equals(2))
+                        if (v.idEstadoEmpleado.Equals(1))
                         {
-                            return RedirectToAction("/Cajero");
+                            Session["idUsuario"] = v.idEmpleado;
+                            Session["tipousuario"] = v.idTipotrab;
+                            Session["nombre"] = v.nombre + " " + v.apellidos;
+                            Session["destipousuario"] = v.tb_tipotrabajador.desTipotrab;
+                            if (Session["tipousuario"].Equals(2))
+                            {
+                                return RedirectToAction("/Cajero");
+                            }
+                            if (Session["tipousuario"].Equals(3))
+                            {
+                                return RedirectToAction("/CajeroConfiteria");
+                            }
+                            else
+                            {
+                                return RedirectToAction("/Administrador");
+                            }
                         }
                         else
                         {
-                            return RedirectToAction("/Administrador");
+                            ViewBag.Message = "Usuario Inhabilitado";
+                            return View();
                         }
                     }                    
                 }
@@ -69,6 +81,11 @@ namespace SWC.Controllers
         }
 
         public ActionResult Cajero()
+        {
+            return View();
+        }
+
+        public ActionResult CajeroConfiteria()
         {
             return View();
         }

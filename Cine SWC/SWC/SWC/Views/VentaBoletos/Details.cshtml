@@ -5,14 +5,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalle</h2>
 
 <div>
-    <h4>tb_VentaBoleto</h4>
+    <h4>Venta de boletos</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.fecha)
+            @Html.DisplayName("Fecha: ")
         </dt>
 
         <dd>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cantidad)
+            @Html.DisplayName("Cantidad: ")
         </dt>
 
         <dd>
@@ -28,7 +28,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.total)
+            @Html.DisplayName("Total: ")
         </dt>
 
         <dd>
@@ -36,15 +36,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_cliente.nombre)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tb_cliente.nombre)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tb_empleado.nombre)
+            @Html.DisplayName("Empleado: ")
         </dt>
 
         <dd>
@@ -52,7 +44,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_funcion.nombre_funcion)
+            @Html.DisplayName("Función: ")
         </dt>
 
         <dd>
@@ -62,6 +54,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idVentaB }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idVentaB }) |
+    @Html.ActionLink("Regresar al listado", "Index")
 </p>

@@ -5,10 +5,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalle</h2>
 
 <div>
-    <h4>tb_pelicula</h4>
+    <h4>Película</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,7 +20,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Foto: ")
+            @Html.DisplayName("Afiche: ")
         </dt>
 
         <dd>
@@ -52,7 +52,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("País: ")
+            @Html.DisplayName("País de orígen: ")
         </dt>
 
         <dd>
@@ -60,7 +60,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Censura: ")
+            @Html.DisplayName("Clasificación: ")
         </dt>
 
         <dd>
@@ -68,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Género: ")
+            @Html.DisplayName("Género de la película: ")
         </dt>
 
         <dd>
@@ -79,5 +79,5 @@
 </div>
 <p>
     @Html.ActionLink("Editar", "Edit", new { id = Model.idPelicula }) |
-    @Html.ActionLink("Listado", "Index")
+    @Html.ActionLink("Regresar al listado", "Index")
 </p>

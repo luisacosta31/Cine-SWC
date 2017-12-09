@@ -18,11 +18,9 @@ namespace SWC.Models
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> idFuncion { get; set; }
         public Nullable<int> idEmpleado { get; set; }
-        public Nullable<int> idCliente { get; set; }
         public Nullable<int> cantidad { get; set; }
         public Nullable<decimal> total { get; set; }
     
-        public virtual tb_cliente tb_cliente { get; set; }
         public virtual tb_empleado tb_empleado { get; set; }
         public virtual tb_funcion tb_funcion { get; set; }
     }

@@ -6,6 +6,8 @@
 }
 
 <h2>Eliminar</h2>
+
+<h3>Está seguro de eliminar este registro?</h3>
 <div>
     <h4>Película</h4>
     <hr />
@@ -19,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Foto: ")
+            @Html.DisplayName("Afiche: ")
         </dt>
 
         <dd>
@@ -27,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Sinopsis : ")
+            @Html.DisplayName("Sinopsis: ")
         </dt>
 
         <dd>
@@ -51,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Pais: ")
+            @Html.DisplayName("País de orígen: ")
         </dt>
 
         <dd>
@@ -59,7 +61,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Censura: ")
+            @Html.DisplayName("Clasificación: ")
         </dt>
 
         <dd>
@@ -67,7 +69,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayName("Geénero: "))
+            @Html.DisplayName("Género de la película: ")
         </dt>
 
         <dd>
@@ -80,8 +82,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Listado", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar al listado", "Index")
         </div>
     }
 </div>

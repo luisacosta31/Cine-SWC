@@ -53,6 +53,10 @@ namespace SWC.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (((DateTime)tb_funcion.fecha_inicio) >= DateTime.Today)
+                {
+                    ViewBag.Message = "La fecha de inicio no puede ser menor a la de hoy";
+                }
                 db.tb_funcion.Add(tb_funcion);
                 db.SaveChanges();
                 return RedirectToAction("Index");

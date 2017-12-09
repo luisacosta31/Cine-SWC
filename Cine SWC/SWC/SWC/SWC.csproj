@@ -81,9 +81,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -205,7 +202,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\EmpleadoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -214,6 +210,7 @@
     <Compile Include="Controllers\ProductoController.cs" />
     <Compile Include="Controllers\tb_funcionController.cs" />
     <Compile Include="Controllers\VentaBoletosController.cs" />
+    <Compile Include="Controllers\VentaProductoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -238,13 +235,13 @@
     <Compile Include="Models\tb_censura.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tb_cliente.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tb_DetalleVentaProducto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_empleado.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tb_estadoempleado.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tb_funcion.cs">
@@ -6516,6 +6513,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\MyScript.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
@@ -6565,11 +6563,6 @@
     <Content Include="Views\Shared\_LayoutCajero.cshtml" />
     <Content Include="Views\Login\Administrador.cshtml" />
     <Content Include="Views\Login\Cajero.cshtml" />
-    <Content Include="Views\Cliente\Create.cshtml" />
-    <Content Include="Views\Cliente\Delete.cshtml" />
-    <Content Include="Views\Cliente\Details.cshtml" />
-    <Content Include="Views\Cliente\Edit.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Producto\Create.cshtml" />
     <Content Include="Views\Producto\Delete.cshtml" />
     <Content Include="Views\Producto\Details.cshtml" />
@@ -6590,7 +6583,19 @@
     <Content Include="Views\VentaBoletos\Details.cshtml" />
     <Content Include="Views\VentaBoletos\Edit.cshtml" />
     <Content Include="Views\VentaBoletos\Index.cshtml" />
-    <Content Include="Views\Cliente\Upload.cshtml" />
+    <Content Include="Views\Shared\_LayoutCajeroConfiteria.cshtml" />
+    <Content Include="Views\Login\CajeroConfiteria.cshtml" />
+    <Content Include="Views\VentaBoletos\VentaBoletosxMes.cshtml" />
+    <Content Include="Views\VentaBoletos\VentaBoletosActuales.cshtml" />
+    <Content Include="Views\VentaProducto\Create.cshtml" />
+    <Content Include="Views\VentaProducto\Delete.cshtml" />
+    <Content Include="Views\VentaProducto\Details.cshtml" />
+    <Content Include="Views\VentaProducto\Edit.cshtml" />
+    <Content Include="Views\VentaProducto\Index.cshtml" />
+    <Content Include="Views\VentaBoletos\CreateP.cshtml" />
+    <Content Include="Views\VentaProducto\CreateP.cshtml" />
+    <Content Include="Views\VentaProducto\VentaProductosActuales.cshtml" />
+    <Content Include="Views\VentaProducto\VentaProductosxMes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

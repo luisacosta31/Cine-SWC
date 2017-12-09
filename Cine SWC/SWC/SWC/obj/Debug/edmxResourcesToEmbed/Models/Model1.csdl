@@ -8,23 +8,6 @@
     <Property Name="desCensura" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="tb_pelicula" Relationship="Self.FK__tb_pelicu__idCen__1ED998B2" FromRole="tb_censura" ToRole="tb_pelicula" />
   </EntityType>
-  <EntityType Name="tb_cliente">
-    <Key>
-      <PropertyRef Name="idCliente" />
-    </Key>
-    <Property Name="idCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="apellidos" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="dni" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
-    <Property Name="fecNac" Type="DateTime" Precision="3" />
-    <Property Name="correo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="contra" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="tarjeta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="idSexo" Type="Int32" />
-    <NavigationProperty Name="tb_Sexo" Relationship="Self.FK__tb_client__idSex__25869641" FromRole="tb_cliente" ToRole="tb_Sexo" />
-    <NavigationProperty Name="tb_VentaBoleto" Relationship="Self.FK__tb_VentaB__idCli__30F848ED" FromRole="tb_cliente" ToRole="tb_VentaBoleto" />
-    <NavigationProperty Name="tb_VentaProducto" Relationship="Self.FK__tb_VentaP__idCli__34C8D9D1" FromRole="tb_cliente" ToRole="tb_VentaProducto" />
-  </EntityType>
   <EntityType Name="tb_DetalleVentaProducto">
     <Key>
       <PropertyRef Name="idDetalleVP" />
@@ -34,9 +17,9 @@
     <Property Name="idProducto" Type="Int32" />
     <Property Name="idTamaño" Type="Int32" />
     <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
-    <NavigationProperty Name="tb_producto" Relationship="Self.FK__tb_Detall__idPro__38996AB5" FromRole="tb_DetalleVentaProducto" ToRole="tb_producto" />
-    <NavigationProperty Name="tb_tamaño" Relationship="Self.FK__tb_Detall__idTam__398D8EEE" FromRole="tb_DetalleVentaProducto" ToRole="tb_tamaño" />
-    <NavigationProperty Name="tb_tipoProducto" Relationship="Self.FK__tb_Detall__idTip__37A5467C" FromRole="tb_DetalleVentaProducto" ToRole="tb_tipoProducto" />
+    <NavigationProperty Name="tb_producto" Relationship="Self.FK__tb_Detall__idPro__36B12243" FromRole="tb_DetalleVentaProducto" ToRole="tb_producto" />
+    <NavigationProperty Name="tb_tamaño" Relationship="Self.FK__tb_Detall__idTam__37A5467C" FromRole="tb_DetalleVentaProducto" ToRole="tb_tamaño" />
+    <NavigationProperty Name="tb_tipoProducto" Relationship="Self.FK__tb_Detall__idTip__35BCFE0A" FromRole="tb_DetalleVentaProducto" ToRole="tb_tipoProducto" />
   </EntityType>
   <EntityType Name="tb_empleado">
     <Key>
@@ -52,11 +35,20 @@
     <Property Name="contra" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="idTipotrab" Type="Int32" />
     <Property Name="idSexo" Type="Int32" />
-    <Property Name="estado" Type="Int32" />
-    <NavigationProperty Name="tb_Sexo" Relationship="Self.FK__tb_emplea__idSex__22AA2996" FromRole="tb_empleado" ToRole="tb_Sexo" />
-    <NavigationProperty Name="tb_tipotrabajador" Relationship="Self.FK__tb_emplea__idTip__21B6055D" FromRole="tb_empleado" ToRole="tb_tipotrabajador" />
+    <Property Name="idEstadoEmpleado" Type="Int32" />
+    <NavigationProperty Name="tb_estadoempleado" Relationship="Self.FK__tb_emplea__idEst__25869641" FromRole="tb_empleado" ToRole="tb_estadoempleado" />
+    <NavigationProperty Name="tb_Sexo" Relationship="Self.FK__tb_emplea__idSex__24927208" FromRole="tb_empleado" ToRole="tb_Sexo" />
+    <NavigationProperty Name="tb_tipotrabajador" Relationship="Self.FK__tb_emplea__idTip__239E4DCF" FromRole="tb_empleado" ToRole="tb_tipotrabajador" />
     <NavigationProperty Name="tb_VentaBoleto" Relationship="Self.FK__tb_VentaB__idEmp__300424B4" FromRole="tb_empleado" ToRole="tb_VentaBoleto" />
-    <NavigationProperty Name="tb_VentaProducto" Relationship="Self.FK__tb_VentaP__idEmp__33D4B598" FromRole="tb_empleado" ToRole="tb_VentaProducto" />
+    <NavigationProperty Name="tb_VentaProducto" Relationship="Self.FK__tb_VentaP__idEmp__32E0915F" FromRole="tb_empleado" ToRole="tb_VentaProducto" />
+  </EntityType>
+  <EntityType Name="tb_estadoempleado">
+    <Key>
+      <PropertyRef Name="idEstadoEmpleado" />
+    </Key>
+    <Property Name="idEstadoEmpleado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="desEstadoEmpleado" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_emplea__idEst__25869641" FromRole="tb_estadoempleado" ToRole="tb_empleado" />
   </EntityType>
   <EntityType Name="tb_funcion">
     <Key>
@@ -107,7 +99,7 @@
     <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="precio" Type="Decimal" Precision="10" Scale="2" />
     <Property Name="idTipopro" Type="Int32" />
-    <NavigationProperty Name="tb_DetalleVentaProducto" Relationship="Self.FK__tb_Detall__idPro__38996AB5" FromRole="tb_producto" ToRole="tb_DetalleVentaProducto" />
+    <NavigationProperty Name="tb_DetalleVentaProducto" Relationship="Self.FK__tb_Detall__idPro__36B12243" FromRole="tb_producto" ToRole="tb_DetalleVentaProducto" />
     <NavigationProperty Name="tb_tipoProducto" Relationship="Self.FK__tb_produc__idTip__286302EC" FromRole="tb_producto" ToRole="tb_tipoProducto" />
   </EntityType>
   <EntityType Name="tb_sala">
@@ -124,8 +116,7 @@
     </Key>
     <Property Name="idSexo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="desSexo" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_cliente" Relationship="Self.FK__tb_client__idSex__25869641" FromRole="tb_Sexo" ToRole="tb_cliente" />
-    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_emplea__idSex__22AA2996" FromRole="tb_Sexo" ToRole="tb_empleado" />
+    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_emplea__idSex__24927208" FromRole="tb_Sexo" ToRole="tb_empleado" />
   </EntityType>
   <EntityType Name="tb_tamaño">
     <Key>
@@ -133,7 +124,7 @@
     </Key>
     <Property Name="idTamaño" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="desTamaño" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_DetalleVentaProducto" Relationship="Self.FK__tb_Detall__idTam__398D8EEE" FromRole="tb_tamaño" ToRole="tb_DetalleVentaProducto" />
+    <NavigationProperty Name="tb_DetalleVentaProducto" Relationship="Self.FK__tb_Detall__idTam__37A5467C" FromRole="tb_tamaño" ToRole="tb_DetalleVentaProducto" />
   </EntityType>
   <EntityType Name="tb_tipoProducto">
     <Key>
@@ -141,7 +132,7 @@
     </Key>
     <Property Name="idTipopro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="desTipopro" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_DetalleVentaProducto" Relationship="Self.FK__tb_Detall__idTip__37A5467C" FromRole="tb_tipoProducto" ToRole="tb_DetalleVentaProducto" />
+    <NavigationProperty Name="tb_DetalleVentaProducto" Relationship="Self.FK__tb_Detall__idTip__35BCFE0A" FromRole="tb_tipoProducto" ToRole="tb_DetalleVentaProducto" />
     <NavigationProperty Name="tb_producto" Relationship="Self.FK__tb_produc__idTip__286302EC" FromRole="tb_tipoProducto" ToRole="tb_producto" />
   </EntityType>
   <EntityType Name="tb_tipotrabajador">
@@ -150,7 +141,7 @@
     </Key>
     <Property Name="idTipotrab" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="desTipotrab" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_emplea__idTip__21B6055D" FromRole="tb_tipotrabajador" ToRole="tb_empleado" />
+    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_emplea__idTip__239E4DCF" FromRole="tb_tipotrabajador" ToRole="tb_empleado" />
   </EntityType>
   <EntityType Name="tb_VentaBoleto">
     <Key>
@@ -160,10 +151,8 @@
     <Property Name="fecha" Type="DateTime" Precision="3" />
     <Property Name="idFuncion" Type="Int32" />
     <Property Name="idEmpleado" Type="Int32" />
-    <Property Name="idCliente" Type="Int32" />
     <Property Name="cantidad" Type="Int32" />
     <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
-    <NavigationProperty Name="tb_cliente" Relationship="Self.FK__tb_VentaB__idCli__30F848ED" FromRole="tb_VentaBoleto" ToRole="tb_cliente" />
     <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_VentaB__idEmp__300424B4" FromRole="tb_VentaBoleto" ToRole="tb_empleado" />
     <NavigationProperty Name="tb_funcion" Relationship="Self.FK__tb_VentaB__idFun__2F10007B" FromRole="tb_VentaBoleto" ToRole="tb_funcion" />
   </EntityType>
@@ -174,10 +163,8 @@
     <Property Name="idVentaP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="fecha" Type="DateTime" Precision="3" />
     <Property Name="idEmpleado" Type="Int32" />
-    <Property Name="idCliente" Type="Int32" />
     <Property Name="total" Type="Decimal" Precision="10" Scale="2" />
-    <NavigationProperty Name="tb_cliente" Relationship="Self.FK__tb_VentaP__idCli__34C8D9D1" FromRole="tb_VentaProducto" ToRole="tb_cliente" />
-    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_VentaP__idEmp__33D4B598" FromRole="tb_VentaProducto" ToRole="tb_empleado" />
+    <NavigationProperty Name="tb_empleado" Relationship="Self.FK__tb_VentaP__idEmp__32E0915F" FromRole="tb_VentaProducto" ToRole="tb_empleado" />
   </EntityType>
   <Association Name="FK__tb_pelicu__idCen__1ED998B2">
     <End Role="tb_censura" Type="Self.tb_censura" Multiplicity="0..1" />
@@ -191,43 +178,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_client__idSex__25869641">
-    <End Role="tb_Sexo" Type="Self.tb_Sexo" Multiplicity="0..1" />
-    <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_Sexo">
-        <PropertyRef Name="idSexo" />
-      </Principal>
-      <Dependent Role="tb_cliente">
-        <PropertyRef Name="idSexo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_VentaB__idCli__30F848ED">
-    <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="0..1" />
-    <End Role="tb_VentaBoleto" Type="Self.tb_VentaBoleto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_cliente">
-        <PropertyRef Name="idCliente" />
-      </Principal>
-      <Dependent Role="tb_VentaBoleto">
-        <PropertyRef Name="idCliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_VentaP__idCli__34C8D9D1">
-    <End Role="tb_cliente" Type="Self.tb_cliente" Multiplicity="0..1" />
-    <End Role="tb_VentaProducto" Type="Self.tb_VentaProducto" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tb_cliente">
-        <PropertyRef Name="idCliente" />
-      </Principal>
-      <Dependent Role="tb_VentaProducto">
-        <PropertyRef Name="idCliente" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__tb_Detall__idPro__38996AB5">
+  <Association Name="FK__tb_Detall__idPro__36B12243">
     <End Role="tb_producto" Type="Self.tb_producto" Multiplicity="0..1" />
     <End Role="tb_DetalleVentaProducto" Type="Self.tb_DetalleVentaProducto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -239,7 +190,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Detall__idTam__398D8EEE">
+  <Association Name="FK__tb_Detall__idTam__37A5467C">
     <End Role="tb_tamaño" Type="Self.tb_tamaño" Multiplicity="0..1" />
     <End Role="tb_DetalleVentaProducto" Type="Self.tb_DetalleVentaProducto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -251,7 +202,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_Detall__idTip__37A5467C">
+  <Association Name="FK__tb_Detall__idTip__35BCFE0A">
     <End Role="tb_tipoProducto" Type="Self.tb_tipoProducto" Multiplicity="0..1" />
     <End Role="tb_DetalleVentaProducto" Type="Self.tb_DetalleVentaProducto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -263,7 +214,19 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_emplea__idSex__22AA2996">
+  <Association Name="FK__tb_emplea__idEst__25869641">
+    <End Role="tb_estadoempleado" Type="Self.tb_estadoempleado" Multiplicity="0..1" />
+    <End Role="tb_empleado" Type="Self.tb_empleado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_estadoempleado">
+        <PropertyRef Name="idEstadoEmpleado" />
+      </Principal>
+      <Dependent Role="tb_empleado">
+        <PropertyRef Name="idEstadoEmpleado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tb_emplea__idSex__24927208">
     <End Role="tb_Sexo" Type="Self.tb_Sexo" Multiplicity="0..1" />
     <End Role="tb_empleado" Type="Self.tb_empleado" Multiplicity="*" />
     <ReferentialConstraint>
@@ -275,7 +238,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_emplea__idTip__21B6055D">
+  <Association Name="FK__tb_emplea__idTip__239E4DCF">
     <End Role="tb_tipotrabajador" Type="Self.tb_tipotrabajador" Multiplicity="0..1" />
     <End Role="tb_empleado" Type="Self.tb_empleado" Multiplicity="*" />
     <ReferentialConstraint>
@@ -299,7 +262,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__tb_VentaP__idEmp__33D4B598">
+  <Association Name="FK__tb_VentaP__idEmp__32E0915F">
     <End Role="tb_empleado" Type="Self.tb_empleado" Multiplicity="0..1" />
     <End Role="tb_VentaProducto" Type="Self.tb_VentaProducto" Multiplicity="*" />
     <ReferentialConstraint>
@@ -373,9 +336,9 @@
   </Association>
   <EntityContainer Name="bd_cine_swcEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="tb_censura" EntityType="Self.tb_censura" />
-    <EntitySet Name="tb_cliente" EntityType="Self.tb_cliente" />
     <EntitySet Name="tb_DetalleVentaProducto" EntityType="Self.tb_DetalleVentaProducto" />
     <EntitySet Name="tb_empleado" EntityType="Self.tb_empleado" />
+    <EntitySet Name="tb_estadoempleado" EntityType="Self.tb_estadoempleado" />
     <EntitySet Name="tb_funcion" EntityType="Self.tb_funcion" />
     <EntitySet Name="tb_genero" EntityType="Self.tb_genero" />
     <EntitySet Name="tb_pelicula" EntityType="Self.tb_pelicula" />
@@ -391,35 +354,27 @@
       <End Role="tb_censura" EntitySet="tb_censura" />
       <End Role="tb_pelicula" EntitySet="tb_pelicula" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_client__idSex__25869641" Association="Self.FK__tb_client__idSex__25869641">
-      <End Role="tb_Sexo" EntitySet="tb_Sexo" />
-      <End Role="tb_cliente" EntitySet="tb_cliente" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_VentaB__idCli__30F848ED" Association="Self.FK__tb_VentaB__idCli__30F848ED">
-      <End Role="tb_cliente" EntitySet="tb_cliente" />
-      <End Role="tb_VentaBoleto" EntitySet="tb_VentaBoleto" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_VentaP__idCli__34C8D9D1" Association="Self.FK__tb_VentaP__idCli__34C8D9D1">
-      <End Role="tb_cliente" EntitySet="tb_cliente" />
-      <End Role="tb_VentaProducto" EntitySet="tb_VentaProducto" />
-    </AssociationSet>
-    <AssociationSet Name="FK__tb_Detall__idPro__38996AB5" Association="Self.FK__tb_Detall__idPro__38996AB5">
+    <AssociationSet Name="FK__tb_Detall__idPro__36B12243" Association="Self.FK__tb_Detall__idPro__36B12243">
       <End Role="tb_producto" EntitySet="tb_producto" />
       <End Role="tb_DetalleVentaProducto" EntitySet="tb_DetalleVentaProducto" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Detall__idTam__398D8EEE" Association="Self.FK__tb_Detall__idTam__398D8EEE">
+    <AssociationSet Name="FK__tb_Detall__idTam__37A5467C" Association="Self.FK__tb_Detall__idTam__37A5467C">
       <End Role="tb_tamaño" EntitySet="tb_tamaño" />
       <End Role="tb_DetalleVentaProducto" EntitySet="tb_DetalleVentaProducto" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_Detall__idTip__37A5467C" Association="Self.FK__tb_Detall__idTip__37A5467C">
+    <AssociationSet Name="FK__tb_Detall__idTip__35BCFE0A" Association="Self.FK__tb_Detall__idTip__35BCFE0A">
       <End Role="tb_tipoProducto" EntitySet="tb_tipoProducto" />
       <End Role="tb_DetalleVentaProducto" EntitySet="tb_DetalleVentaProducto" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_emplea__idSex__22AA2996" Association="Self.FK__tb_emplea__idSex__22AA2996">
+    <AssociationSet Name="FK__tb_emplea__idEst__25869641" Association="Self.FK__tb_emplea__idEst__25869641">
+      <End Role="tb_estadoempleado" EntitySet="tb_estadoempleado" />
+      <End Role="tb_empleado" EntitySet="tb_empleado" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tb_emplea__idSex__24927208" Association="Self.FK__tb_emplea__idSex__24927208">
       <End Role="tb_Sexo" EntitySet="tb_Sexo" />
       <End Role="tb_empleado" EntitySet="tb_empleado" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_emplea__idTip__21B6055D" Association="Self.FK__tb_emplea__idTip__21B6055D">
+    <AssociationSet Name="FK__tb_emplea__idTip__239E4DCF" Association="Self.FK__tb_emplea__idTip__239E4DCF">
       <End Role="tb_tipotrabajador" EntitySet="tb_tipotrabajador" />
       <End Role="tb_empleado" EntitySet="tb_empleado" />
     </AssociationSet>
@@ -427,7 +382,7 @@
       <End Role="tb_empleado" EntitySet="tb_empleado" />
       <End Role="tb_VentaBoleto" EntitySet="tb_VentaBoleto" />
     </AssociationSet>
-    <AssociationSet Name="FK__tb_VentaP__idEmp__33D4B598" Association="Self.FK__tb_VentaP__idEmp__33D4B598">
+    <AssociationSet Name="FK__tb_VentaP__idEmp__32E0915F" Association="Self.FK__tb_VentaP__idEmp__32E0915F">
       <End Role="tb_empleado" EntitySet="tb_empleado" />
       <End Role="tb_VentaProducto" EntitySet="tb_VentaProducto" />
     </AssociationSet>

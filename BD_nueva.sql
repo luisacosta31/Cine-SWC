@@ -191,6 +191,7 @@ idDetalleVP int primary key identity(1,1),
 idTipopro int references tb_tipoProducto,
 idProducto int references tb_Producto,
 idTamaño int references tb_Tamaño,
-total decimal(10,2) null
+idVentaP int references tb_VentaProducto,
+subtotal decimal(10,2) null
 )
 go

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Listado</h2>
+<h2>Listado de Funciones</h2>
 
 <p>
     @Html.ActionLink("Registrar nueva función", "Create")
@@ -13,25 +13,25 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Nombre función")
+            @Html.DisplayName("Nombre: ")
         </th>
         <th>
-            @Html.DisplayName("Fecha de inicio")
+            @Html.DisplayName("Fecha de inicio de la función: ")
         </th>
         <th>
-            @Html.DisplayName("Fecha de fin")
+            @Html.DisplayName("Fecha de fin de la función: ")
         </th>
         <th>
-            @Html.DisplayName("Número de Sala")
+            @Html.DisplayName("Nro de Sala: ")
         </th>
         <th>
-            @Html.DisplayName("Hora de la función")
+            @Html.DisplayName("Hora de la función: ")
         </th>
         <th>
-            @Html.DisplayName("Nombre de la película")
+            @Html.DisplayName("Nombre de la película a presentar: ")
         </th>
         <th>
-            @Html.DisplayName("Descripción de la sala")
+            @Html.DisplayName("Sala: ")
         </th>
         <th></th>
     </tr>
@@ -61,7 +61,8 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idFuncion }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.idFuncion }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idFuncion }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idFuncion })
         </td>
     </tr>
 }

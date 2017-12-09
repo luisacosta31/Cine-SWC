@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Registrar película</h2>
+<h2>Registrar Nuevo</h2>
 
 
 @using (Html.BeginForm()) 
@@ -19,15 +19,15 @@
         <div class="form-group">
             @Html.Label("Nombre *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control", required="required" } })
                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.Label("Foto *", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Afiche *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.foto, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.foto, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.foto, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -35,7 +35,7 @@
         <div class="form-group">
             @Html.Label("Sinopsis *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.sinopsis, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.sinopsis, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.sinopsis, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="form-group">
             @Html.Label("Duración *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.duracion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.duracion, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.duracion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -51,13 +51,13 @@
         <div class="form-group">
             @Html.Label("Trailer *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.trailer, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.trailer, new { htmlAttributes = new { @class = "form-control", required = "required" } })
                 @Html.ValidationMessageFor(model => model.trailer, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.Label("País *", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("País de origen *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.pais, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.pais, "", new { @class = "text-danger" })
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Género *", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Género de película *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idGenero", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.idGenero, "", new { @class = "text-danger" })
@@ -73,11 +73,15 @@
         </div>
 
         <div class="form-group">
-            @Html.Label("Censura *", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.Label("Clasificación *", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idCensura", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.idCensura, "", new { @class = "text-danger" })
             </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Todos los campos con (*) son obligatorios")
         </div>
 
         <div class="form-group">
@@ -89,7 +93,7 @@
 }
 
 <div>
-    @Html.ActionLink("Listado", "Index")
+    @Html.ActionLink("Regresar al listado", "Index")
 </div>
 
 @section Scripts {

@@ -1,0 +1,119 @@
+﻿@model SWC.Models.tb_VentaProducto
+
+@{
+    ViewBag.Title = "CreateP";
+    Layout = "~/Views/Shared/_LayoutCajeroConfiteria.cshtml";
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.0/sweetalert2.min.css" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.HiddenFor(model => model.fecha, new { htmlAttributes = new { @class = "form-control" } })
+    <div class="col-md-10" hidden>
+        @Html.DropDownList("idEmpleado", null, htmlAttributes: new { @class = "form-control" })
+    </div>
+    <div class="form-horizontal">
+        <div class="form-group">
+            <label class="col-md-2 control-label" style="text-align: center; padding-top: 25px; padding-bottom: 20px">Total</label>
+            <div class="col-md-4" style="padding-top: 20px; padding-bottom: 20px">
+                <input type="text" id="total" name="total" class="total labelcab headwithtexto" value="0" />
+            </div>
+        </div>
+    </div>
+
+
+    <div class="details">
+        <div class="table-responsive">
+            <table id="example" class="table table-bordered table-striped" border="1">
+
+                <tr>
+                    <td>Tipo Producto</td>
+                    <td>Producto</td>
+                    <td>Tamaño</td>
+                    <td>Cantidad</td>
+                    <td>Subtotal</td>
+                    <td>Agregar</td>
+                </tr>
+
+                <tr class="mycontainer" id="mainrow">
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DropDownList("idTipopro", null, htmlAttributes: new { @class = "idTipopro form-control", @style = "    width: 213px;" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DropDownList("idProducto", null, htmlAttributes: new { @class = "idProducto form-control", @style = "    width: 213px;" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                @Html.DropDownList("idTamaño", null, htmlAttributes: new { @class = "idTamaño form-control", @style = "    width: 213px;" })
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" id="cantidad" name="cantidad" class="cantidad labelcab headwithtexto" onchange="multiplicar(idProducto);" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="text" id="subtotal" name="subtotal" class="subtotal labelcab headwithtexto" value="0" onchange="sumar();" />
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <input type="button" id="add" value="add" style="width: 80px" class="btn btn-success" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="orderItems">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped" id="orderdetailsItems"></table>
+        </div>
+        <span id="orderItemError" style="color: red"></span>
+    </div>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <input id="submit" type="button" name="submit" value="Guardar" class="btn btn-primary center-block" style="padding: 10px 20px" />
+                <a href="/VentaProducto/Index" style="padding: 10px 20px; width:93px" class="btn btn-danger center-block">Volver</a>
+            </div>
+        </div>
+
+        <script>
+                function multiplicar() {
+                    m1 = document.getElementById("cantidad").value;
+                    r = 10 * m1;
+                    document.getElementById("subtotal").value = r;
+                }
+        </script>
+            <script>
+
+                function sumar() {
+                    var suma = 0;
+                    var num = document.getElementById("subtotal").value;
+
+                    suma = suma + num;
+                    document.getElementById("total").value = suma;
+                }
+            </script>
+
+
+}
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="~/Scripts/MyScript.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.9.0/sweetalert2.min.js"></script>

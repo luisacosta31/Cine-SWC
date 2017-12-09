@@ -13,13 +13,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Nombre")
+            @Html.DisplayName("Nombre: ")
         </th>
         <th>
-            @Html.DisplayName("Precio")
+            @Html.DisplayName("Precio: ")
         </th>
         <th>
-            @Html.DisplayName("Tipo de producto")
+            @Html.DisplayName("Tipo de producto: ")
         </th>
         <th></th>
     </tr>
@@ -37,7 +37,8 @@
         </td>
         <td>
             @Html.ActionLink("Editar", "Edit", new { id=item.idProducto }) |
-            @Html.ActionLink("Detalle", "Details", new { id=item.idProducto }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.idProducto }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idProducto })
         </td>
     </tr>
 }

@@ -17,7 +17,7 @@ namespace SWC.Controllers
         public ActionResult Index()
         {
             var tb_empleado = db.tb_empleado.Include(t => t.tb_Sexo).Include(t => t.tb_tipotrabajador);
-            return View(tb_empleado.ToList());
+            return View(tb_empleado.ToList().Where(e=>e.idEstadoEmpleado.Equals(1)));
         }
 
         // GET: Empleado/Details/5
@@ -48,10 +48,11 @@ namespace SWC.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idEmpleado,nombre,apellidos,dni,sueldo,fecNac,usuario,contra,idTipotrab,idSexo")]  tb_empleado tb_empleado)
+        public ActionResult Create([Bind(Include = "idEmpleado,nombre,apellidos,dni,sueldo,fecNac,usuario,contra,idTipotrab,idSexo,idEstadoEmpleado")]  tb_empleado tb_empleado)
         {
             if (ModelState.IsValid)
-            {
+                {
+                tb_empleado.idEstadoEmpleado = 1;
                 if(tb_empleado.dni.Length!= 8)
                 {
                     ViewBag.Message = "El dni debe tener 8 dígitos";
@@ -149,7 +150,7 @@ namespace SWC.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             tb_empleado tb_empleado = db.tb_empleado.Find(id);
-            db.tb_empleado.Remove(tb_empleado);
+            db.tb_empleado.Where(i => i.idEmpleado.Equals(id)).First().idEstadoEmpleado = 2;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

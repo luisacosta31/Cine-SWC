@@ -5,15 +5,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Está seguro de eliminar este registro?</h3>
 <div>
-    <h4>tb_funcion</h4>
+    <h4>Función</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre_funcion)
+            @Html.DisplayName("Nombre de la función: ")
         </dt>
 
         <dd>
@@ -21,7 +21,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fecha_inicio)
+            @Html.DisplayName("Fecha de inicio de la función: ")
         </dt>
 
         <dd>
@@ -29,7 +29,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fecha_fin)
+            @Html.DisplayName("Fecha de fin de la función: ")
         </dt>
 
         <dd>
@@ -37,7 +37,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nroSala)
+            @Html.DisplayName("Número de la sala: ")
         </dt>
 
         <dd>
@@ -45,7 +45,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.hora_funcion)
+            @Html.DisplayName("Hora de la función: ")
         </dt>
 
         <dd>
@@ -53,7 +53,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_pelicula.nombre)
+            @Html.DisplayName("Nombre de la película: ")
         </dt>
 
         <dd>
@@ -61,7 +61,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_sala.desSala)
+            @Html.DisplayName("Sala: ")
         </dt>
 
         <dd>
@@ -74,8 +74,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar al listado", "Index")
         </div>
     }
 </div>
