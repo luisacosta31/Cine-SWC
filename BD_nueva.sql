@@ -103,6 +103,12 @@ idCensura int references tb_censura
 )
 go
 
+create table tb_estadoempleado(
+idEstadoEmpleado int primary key identity(1,1),
+desEstadoEmpleado varchar(200) null
+)
+go
+
 if object_id('tb_empleado') is not null
 	drop table tb_empleado
 go
@@ -118,24 +124,7 @@ usuario varchar(200),
 contra varchar(200),
 idTipotrab int references tb_tipotrabajador,
 idSexo int references tb_sexo,
-estado int null
-)
-go
-
-if object_id('tb_cliente') is not null
-	drop table tb_cliente
-go
-
-create table tb_cliente(
-idCliente int primary key identity(1,1),
-nombre varchar(200)null,
-apellidos varchar(200) null,
-dni varchar(8) null,
-fecNac datetime null,
-correo varchar(200) null,
-contra varchar(200) null,
-tarjeta varchar(200) null,
-idSexo int references tb_sexo
+idEstadoEmpleado int references tb_estadoempleado,
 )
 go
 
@@ -176,7 +165,6 @@ idVentaB int primary key identity(1,1),
 fecha datetime null,
 idFuncion int references tb_Funcion,
 idEmpleado int references tb_empleado,
-idCliente int references tb_cliente,
 cantidad int null,
 total decimal(10,2) null
 )
@@ -190,7 +178,6 @@ create table tb_VentaProducto(
 idVentaP int primary key identity(1,1),
 fecha datetime null,
 idEmpleado int references tb_empleado,
-idCliente int references tb_cliente,
 total decimal(10,2) null
 )
 go
