@@ -6596,6 +6596,7 @@
     <Content Include="Views\VentaProducto\CreateP.cshtml" />
     <Content Include="Views\VentaProducto\VentaProductosActuales.cshtml" />
     <Content Include="Views\VentaProducto\VentaProductosxMes.cshtml" />
+    <Content Include="Views\VentaBoletos\VentasxEmpleado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

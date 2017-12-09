@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SWC.Models.tb_VentaBoleto>
+
+@{
+    ViewBag.Title = "VentasxEmpleado";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var empleados = (SelectList)ViewBag.empleados;
+}
+
+<h2>Ventas por Empleado</h2>
+
+@using (Html.BeginForm())
+{
+    <em>Selecciona un Empleado</em>
+    @Html.DropDownList("empleado", empleados)
+    <input type="submit" value="consulta" />
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cantidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_empleado.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_funcion.nombre_funcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cantidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_empleado.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_funcion.nombre_funcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.idVentaB }) |
+            @Html.ActionLink("Details", "Details", new { id=item.idVentaB }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.idVentaB })
+        </td>
+    </tr>
+}
+
+</table>

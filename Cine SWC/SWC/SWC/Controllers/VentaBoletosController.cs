@@ -29,8 +29,15 @@ namespace SWC.Controllers
             return View(lista);
         }
 
+        public ActionResult VentasxEmpleado(int empleado = 0)
+        {
+            ViewBag.empleados = new SelectList(db.tb_empleado.ToList().Where(e=>e.idTipotrab.Equals(2)), "idEmpleado", "nombre", empleado);
+            ViewBag.empleado = empleado;
+            return View(db.tb_VentaBoleto.ToList().Where(e => e.idEmpleado == empleado));
+        }
         public ActionResult VentaBoletosxMes(int mes = 0, int mesFinal = 0)
         {
+
             ViewBag.mes = mes;
             ViewBag.mesFinal = mesFinal;
             var tb_VentaaBoleto = db.tb_VentaBoleto;
@@ -46,8 +53,6 @@ namespace SWC.Controllers
                 }
                    var lista = tb_VentaaBoleto.ToList().Where(m => ((DateTime)m.fecha).Month >= mes && ((DateTime)m.fecha).Month <= mesFinal);
                     return View(lista);
-                
-                
             }
         }
 
